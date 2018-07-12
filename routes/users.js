@@ -16,7 +16,9 @@ var check1;
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.redirect('/');
+  usersmodel.fetchdata('addcat',function(result){
+    res.render('index',{'mycat':result,"mycheck":1,'unm':req.session.unm,'role':req.session.role});
+  })
 });
 
 router.all('/manageprofile', function(req, res, next) {

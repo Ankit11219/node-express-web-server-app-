@@ -17,19 +17,14 @@ var check1;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   if(req.session.unm==undefined && req.session.role!="user"){
-    sess="";
-    check1 = 0;
+    usersmodel.fetchdata('addcat',function(result){
+      res.render('index',{'mycat':result,"mycheck":0,'unm':"",'role':""});
+    })
   }
   else{
-    sess=req.session.unm;
-    check1=1;
+    res.redirect('/users/')
   }
-  usersmodel.fetchdata('addcat',function(result){
-    if(check1)
-    res.render('index',{'mycat':result,"mycheck":check1,'unm':req.session.unm,'role':req.session.role});
-    else
-    res.render('index',{'mycat':result,"mycheck":check1,'unm':"",'role':""});
-   })
+  
 });
 
 
