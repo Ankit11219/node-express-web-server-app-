@@ -1,0 +1,136 @@
+<% include header %>    
+<% include usernav %>    
+<% include slider %>        
+    
+	<div id="page">
+		<div id="content">
+			<div class="box">
+                <h2 style="color:orangered"><%= result %></h2>
+                <br/>
+                
+                <h2>Manage Profile</h2>
+                <form method="POST" action="/users/manageprofile">
+                    <table  cellspacing='10'>
+                        <tr>
+                            <td>Name</td>
+                            <td>
+                            <input type="text" name="nm" value="<%= userProfile[0].nm %>"/>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                            <input type="password" onkeyup="validate()" name="pass" id="pass" value="<%= userProfile[0].pass %>"/>    
+                            </td>
+                            <td><span id="pdisplay"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Re-Enter Password</td>
+                            <td>
+                                <input onkeyup="validate()" type="password" id="rpass" placeholder="Re-Enter password">
+                            
+                            </td>
+                                <td><span id="rdisplay"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>
+                            <textarea name="address" rows="5" cols="18" ><%= userProfile[0].address %></textarea>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phone no.</td>
+                            <td>
+                            <input type="text" name="mob" value="<%= userProfile[0].mob %>" />    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td>
+                            <select name="city">
+                                <option><%= userProfile[0].city %></option>
+                                <option>Indore</option>
+                                <option>Bhopal</option>
+                                <option>Ujjain</option>
+                            </select>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                               <input type="submit" name="s" value="Update" onclick="return validate()"/>     
+                            </td>
+                        </tr>
+                    </table>        
+                </form>
+
+                </div>
+		</div>
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Facebook</a></li>
+					<li><a href="#">Gmail</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">LinkedIn</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+    <script type="text/javascript">
+        function validate(){
+        var pass=document.getElementById("pass");
+        var rpass=document.getElementById("rpass");
+   if(pass.value==="")
+    {
+    var pdisplay=document.getElementById("pdisplay");
+    pdisplay.innerHTML="Please enter Password";
+    pdisplay.style.color="red";
+    return false;
+    
+    }
+    else
+    {
+    var pdisplay=document.getElementById("pdisplay");
+    pdisplay.innerHTML="";
+    
+    }
+    if(rpass.value==="")
+    {
+    var rdisplay=document.getElementById("rdisplay");
+    rdisplay.innerHTML="Please re-enter Password";
+    rdisplay.style.color="red";
+    return false;
+    
+    }
+    else
+    {
+    if(pass.value===rpass.value)
+    {
+    var rdisplay=document.getElementById("rdisplay");
+    rdisplay.innerHTML="password matched";
+    rdisplay.style.color="blue";
+    
+    }
+    else
+    {
+    var rdisplay=document.getElementById("rdisplay");
+    rdisplay.innerHTML="password does not matched";
+    rdisplay.style.color="green";
+  return false;  
+    
+        }
+    }
+    return true;
+    }
+    </script>
+    
+<% include footer %>        
+    
+    
+    
+    
+    
+    

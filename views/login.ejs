@@ -1,0 +1,60 @@
+<% include header %>    
+<% include nav %>    
+<% include slider %>        
+    
+	<div id="page">
+		<div id="content">
+			<div class="box">
+					<h2 style="color:orangered"><%= result %></h2>
+					<br/>
+					
+				<h2>Login page</h2>
+							   
+				<form method="POST" action="/login">
+                    <table  cellspacing='10'>
+                        <tr>
+                            <td>Username(Email ID)</td>
+                            <td>
+                            <input type="text" name="unm" />    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                            <input type="password" name="pass" />    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                               <input type="submit" name="s" value="Login" />     
+                            </td>
+                        </tr>
+                    </table>        
+                </form>
+
+
+                        </div>
+		</div>
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Facebook</a></li>
+					<li><a href="#">Gmail</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">LinkedIn</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+    
+    
+<% include footer %>        
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,69 @@
+<% include header %>    
+<% if (mycheck==1) { %>
+    <% include usernav %>
+    <% } else { %>
+<% include nav %>
+<% } %>     
+<% include slider %>        
+    
+	<div id="page">
+			<h2><%= unm %></h2>
+				<h2 style="text-align: center;"><%= mypost[0].cat_nm %></h2>
+				 
+				
+				<style>
+				.mycat
+				{
+					height: 180px;
+					width:95%;
+					margin: auto;
+				}
+				.mycat1{
+					width:220px;
+					height:170px;
+					float: left;
+					margin: 5px;
+				}
+
+				.mycat2
+				{
+					height: 170px;
+					width: 190px;
+					float: left;
+					margin: 5px;
+				}
+
+				</style>
+				
+					<% for(i=0;i<mypost.length;i++) { %>
+				<div class="mycat" style="border:2px solid rgba(0, 0, 0, 0.2);">
+					
+					<div class="mycat2">
+						<img src="../uploads/<%= mypost[i].my_img1 %>" height="170" width="150"/>
+					</div>
+					<div class="mycat2">
+						<h4><a href="/showpost/<%= mypost[i].cat_nm %>"><%= mypost[i].title %></a></h4>
+						<p><%= mypost[i].cat_nm %> >> <%= mypost[i].Pro_name %></p>
+						<h5><%= mypost[i].city %>, <%= mypost[i].state %></h5>
+					</div>
+					<div class="mycat1">
+							<p><b>Description:-</b><%= mypost[i].description %></p>
+						</div>
+					<div class="mycat2">
+						<h4 style="text-align: right;margin-top: 10px;">₹ <%= mypost[i].price %></h4>
+						</div>
+				</div>
+				<br>
+					<% } %>
+			
+		<br class="clearfix" />
+	</div>
+    
+    
+<% include footer %>        
+    
+    
+    
+    
+    
+    

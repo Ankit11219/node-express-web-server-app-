@@ -1,0 +1,67 @@
+<% include header %>    
+<% include adminnav %>    
+<% include slider %>        
+    
+	<div id="page">
+		<div id="content">
+			<div class="box">
+                <h1 style="color: orangered"><%= result %></h1>    
+				<h2>Add sub-category</h2>
+			    <form method="POST" action="/admin/addsubcategory" enctype='multipart/form-data'>
+                    <table  cellspacing='10'>
+                        <tr>
+                            <td>Select Category</td>
+                            <td>
+                            <select name="cat_nm">
+                                <option>select category</option>
+                                <% for(i=0;i<mycat.length;i++) { %>
+                                <option><%= mycat[i].cat_nm %></option>
+                                <% } %>
+                            </select>        
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Sub Category Name</td>
+                            <td>
+                            <input type="text" name="sub_cat_nm" />    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sub Category Image</td>
+                            <td>
+                            <input type="file" name="cat_img" />    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                               <input type="submit" name="s" value="Add Sub Category" />     
+                            </td>
+                        </tr>
+                    </table>        
+                </form>
+        
+                        </div>
+		</div>
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Facebook</a></li>
+					<li><a href="#">Gmail</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">LinkedIn</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+    
+    
+<% include footer %>        
+    
+    
+    
+    
+    
+    

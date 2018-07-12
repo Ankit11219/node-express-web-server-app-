@@ -1,0 +1,165 @@
+<% include header %>    
+<% include nav %>    
+<% include slider %>        
+    
+	<div id="page">
+		<div id="content">
+			<div class="box">
+                <h2 style="color:orangered"><%= result %></h2>
+                <br/>
+                
+                <h2>User Registration here!!!</h2>
+                <form method="POST" action="/register">
+                    <table  cellspacing='10'>
+                        <tr>
+                            <td>Name</td>
+                            <td>
+                            <input type="text" name="nm" />    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Username(Email ID)</td>
+                            <td>
+                            <input type="email" name="unm" placeholder="Enter email" required/>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>
+                            <input type="password" onkeyup="validate()" name="pass" id="pass" placeholder="Enter Password"/>    
+                            </td>
+                            <td><span id="pdisplay"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Re-Enter Password</td>
+                            <td>
+                                <input onkeyup="validate()" type="password" id="rpass" placeholder="Re-Enter password">
+                            
+                            </td>
+                                <td><span id="rdisplay"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>
+                            <textarea name="address" rows="5" cols="32"></textarea>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phone no.</td>
+                            <td>
+                            <input type="text" name="mob" />    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td>
+                            <select name="city">
+                                <option>Select City</option>
+                                <option>Indore</option>
+                                <option>Bhopal</option>
+                                <option>Ujjain</option>
+                            </select>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>
+                            Male <input type="radio" name="gender" value='male'/>
+                            &nbsp;&nbsp;    
+                            Female <input type="radio" name="gender" value='female'/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                               <input type="submit" name="s" value="Register" onclick="return validate()"/>     
+                            </td>
+                        </tr>
+                    </table>        
+                </form>
+
+                </div>
+		</div>
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Facebook</a></li>
+					<li><a href="#">Gmail</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">LinkedIn</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+    <script type="text/javascript">
+        function validate(){
+        var email=document.getElementById("email");
+        var pass=document.getElementById("pass");
+        var rpass=document.getElementById("rpass");
+        if(email.value==="")
+    {
+    var edisplay=document.getElementById("edisplay");
+    edisplay.innerHTML="Please enter Email";
+    edisplay.style.color="red";
+    return false;
+    
+    }
+    else
+    {
+    var edisplay=document.getElementById("edisplay");
+    edisplay.innerHTML="";
+    
+    }
+        if(pass.value==="")
+    {
+    var pdisplay=document.getElementById("pdisplay");
+    pdisplay.innerHTML="Please enter Password";
+    pdisplay.style.color="red";
+    return false;
+    
+    }
+    else
+    {
+    var pdisplay=document.getElementById("pdisplay");
+    pdisplay.innerHTML="";
+    
+    }
+    if(rpass.value==="")
+    {
+    var rdisplay=document.getElementById("rdisplay");
+    rdisplay.innerHTML="Please re-enter Password";
+    rdisplay.style.color="red";
+    return false;
+    
+    }
+    else
+    {
+    if(pass.value===rpass.value)
+    {
+    var rdisplay=document.getElementById("rdisplay");
+    rdisplay.innerHTML="password matched";
+    rdisplay.style.color="blue";
+    
+    }
+    else
+    {
+    var rdisplay=document.getElementById("rdisplay");
+    rdisplay.innerHTML="password does not matched";
+    rdisplay.style.color="green";
+  return false;  
+    
+        }
+    }
+    return false;
+    }
+    </script>
+    
+<% include footer %>        
+    
+    
+    
+    
+    
+    

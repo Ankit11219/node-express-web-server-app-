@@ -1,0 +1,66 @@
+<% include header %>    
+<% if (mycheck==1) { %>
+    <% include usernav %>
+    <% } else { %>
+<% include nav %>
+<% } %>     
+<% include slider %>        
+    
+	<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>View Sub-Categories</h2>
+				<h2><%= unm %></h2> 
+				
+				<style>
+				#mycat
+				{
+					height: 450px;
+					width: 600px;
+				}
+				#mycat1
+				{
+					height: 150px;
+					width: 200px;
+					float:left;  
+				}
+
+				</style>
+				<div id="mycat">
+					<% for(i=0;i<mycat.length;i++) { %>
+					<a href="/showpost/<%= mycat[i].sub_cat_nm %>">	
+					<div id="mycat1">
+						<center><img src="../uploads/<%= mycat[i].sub_cat_img %>" height="100" width="150"/>
+						<br>
+						<b><%= mycat[i].sub_cat_nm %></b>
+						</center>
+					</div>
+					</a>
+					<% } %>
+				</div>
+				
+                </div>
+		</div>
+		<div id="sidebar">
+			<div class="box">
+				<h3>Category List</h3>
+				<ul class="list">
+                    <% for(i=0;i<mycat1.length;i++) { %>
+                    <li><a href="/viewsubcat/<%= mycat1[i].cat_nm %>"><%= mycat1[i].cat_nm %></a></li>
+                    <% } %>
+                    
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+    
+    
+<% include footer %>        
+    
+    
+    
+    
+    
+    

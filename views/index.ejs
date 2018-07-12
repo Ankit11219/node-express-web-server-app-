@@ -1,0 +1,68 @@
+<% include header %>   
+<% if (mycheck==1) { %>
+    <% include usernav %>
+    <% } else { %>
+<% include nav %>
+<% } %>   
+<% include slider %>        
+    
+	<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>Welcome to PostKrde.com</h2>
+				<h2><%= unm %></h2>       
+
+				
+				<style>
+				#mycat
+				{
+					height: 450px;
+					width: 600px;
+				}
+				#mycat1
+				{
+					height: 150px;
+					width: 200px;
+					float:left;  
+				}
+
+				</style>
+
+				<div id="mycat">
+					<% for(i=0;i<mycat.length;i++) { %>
+					<a href="/viewsubcat/<%= mycat[i].cat_nm %>">	
+					<div id="mycat1">
+						<center><img src="uploads/<%= mycat[i].cat_img %>" height="100" width="150"/>
+						<br>
+						<b><%= mycat[i].cat_nm %></b>
+						</center>
+					</div>
+					</a>
+					<% } %>
+				</div>
+				
+                </div>
+		</div>
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Facebook</a></li>
+					<li><a href="#">Gmail</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">LinkedIn</a></li>
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+    
+    
+<% include footer %>        
+    
+    
+    
+    
+    
+    
