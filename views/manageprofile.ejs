@@ -18,16 +18,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Password</td>
+                            <td>Old Password</td>
                             <td>
-                            <input type="password" onkeyup="validate()" name="pass" id="pass" value="<%= userProfile[0].pass %>"/>    
+                            <input type="text" id="pass" value="<%= userProfile[0].pass %>"/>    
                             </td>
                             <td><span id="pdisplay"></span></td>
                         </tr>
                         <tr>
-                            <td>Re-Enter Password</td>
+                            <td>New Password</td>
                             <td>
-                                <input onkeyup="validate()" type="password" id="rpass" placeholder="Re-Enter password">
+                                <input type="text" id="rpass" name="pass" placeholder="New password" value="<%= userProfile[0].pass %>">
                             
                             </td>
                                 <td><span id="rdisplay"></span></td>
@@ -47,17 +47,43 @@
                         <tr>
                             <td>City</td>
                             <td>
-                            <select name="city">
-                                <option><%= userProfile[0].city %></option>
-                                <option>Indore</option>
-                                <option>Bhopal</option>
-                                <option>Ujjain</option>
+                            <select name="state">
+                                <option><%= userProfile[0].state %></option>
+                                <option>Andhra Pradesh</option>
+                                <option>Arunachal Pradesh</option>
+                                <option>Assam</option>
+                                <option>Bihar</option>
+                                <option>Chhattisgarh</option>
+                                <option>Goa</option>
+                                <option>Gujarat</option>
+                                <option>Haryana</option>
+                                <option>Himachal Pradesh</option>
+                                <option>Jammu & Kashmir</option>
+                                <option>Jharkhand</option>
+                                <option>Karnataka</option>
+                                <option>Kerala</option>
+                                <option>Madhya Pradesh</option>
+                                <option>Maharashtra</option>
+                                <option>Manipur</option>
+                                <option>Meghalaya</option>
+                                <option>Mizoram</option>
+                                <option>Nagaland</option>
+                                <option>Odisha</option>
+                                <option>Punjab</option>
+                                <option>Rajasthan</option>
+                                <option>Sikkim</option>
+                                <option>Tamil Nadu</option>
+                                <option>Telangana</option>
+                                <option>Tripura</option>
+                                <option>Uttarakhand</option>
+                                <option>Uttar Pradesh</option>
+                                <option>West Bengal</option>
                             </select>    
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                               <input type="submit" name="s" value="Update" onclick="return validate()"/>     
+                               <input type="submit" name="s" value="Update"/>     
                             </td>
                         </tr>
                     </table>        
@@ -65,67 +91,9 @@
 
                 </div>
 		</div>
-		<div id="sidebar">
-			<div class="box">
-				<h3>Social Links</h3>
-				<ul class="list">
-					<li class="first"><a href="#">Facebook</a></li>
-					<li><a href="#">Gmail</a></li>
-					<li><a href="#">Twitter</a></li>
-					<li><a href="#">LinkedIn</a></li>
-				</ul>
-			</div>
-			
-		</div>
+		<% include sidebar %>
 		<br class="clearfix" />
 	</div>
-    <script type="text/javascript">
-        function validate(){
-        var pass=document.getElementById("pass");
-        var rpass=document.getElementById("rpass");
-   if(pass.value==="")
-    {
-    var pdisplay=document.getElementById("pdisplay");
-    pdisplay.innerHTML="Please enter Password";
-    pdisplay.style.color="red";
-    return false;
-    
-    }
-    else
-    {
-    var pdisplay=document.getElementById("pdisplay");
-    pdisplay.innerHTML="";
-    
-    }
-    if(rpass.value==="")
-    {
-    var rdisplay=document.getElementById("rdisplay");
-    rdisplay.innerHTML="Please re-enter Password";
-    rdisplay.style.color="red";
-    return false;
-    
-    }
-    else
-    {
-    if(pass.value===rpass.value)
-    {
-    var rdisplay=document.getElementById("rdisplay");
-    rdisplay.innerHTML="password matched";
-    rdisplay.style.color="blue";
-    
-    }
-    else
-    {
-    var rdisplay=document.getElementById("rdisplay");
-    rdisplay.innerHTML="password does not matched";
-    rdisplay.style.color="green";
-  return false;  
-    
-        }
-    }
-    return true;
-    }
-    </script>
     
 <% include footer %>        
     

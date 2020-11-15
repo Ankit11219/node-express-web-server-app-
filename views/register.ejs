@@ -53,12 +53,38 @@
                         <tr>
                             <td>City</td>
                             <td>
-                            <select name="city">
-                                <option>Select City</option>
-                                <option>Indore</option>
-                                <option>Bhopal</option>
-                                <option>Ujjain</option>
-                            </select>    
+                                <select name="state">
+                                    <option>Select State..</option>
+                                    <option>Andhra Pradesh</option>
+                                    <option>Arunachal Pradesh</option>
+                                    <option>Assam</option>
+                                    <option>Bihar</option>
+                                    <option>Chhattisgarh</option>
+                                    <option>Goa</option>
+                                    <option>Gujarat</option>
+                                    <option>Haryana</option>
+                                    <option>Himachal Pradesh</option>
+                                    <option>Jammu & Kashmir</option>
+                                    <option>Jharkhand</option>
+                                    <option>Karnataka</option>
+                                    <option>Kerala</option>
+                                    <option>Madhya Pradesh</option>
+                                    <option>Maharashtra</option>
+                                    <option>Manipur</option>
+                                    <option>Meghalaya</option>
+                                    <option>Mizoram</option>
+                                    <option>Nagaland</option>
+                                    <option>Odisha</option>
+                                    <option>Punjab</option>
+                                    <option>Rajasthan</option>
+                                    <option>Sikkim</option>
+                                    <option>Tamil Nadu</option>
+                                    <option>Telangana</option>
+                                    <option>Tripura</option>
+                                    <option>Uttarakhand</option>
+                                    <option>Uttar Pradesh</option>
+                                    <option>West Bengal</option>
+                                </select>      
                             </td>
                         </tr>
                         <tr>
@@ -95,23 +121,8 @@
 	</div>
     <script type="text/javascript">
         function validate(){
-        var email=document.getElementById("email");
         var pass=document.getElementById("pass");
         var rpass=document.getElementById("rpass");
-        if(email.value==="")
-    {
-    var edisplay=document.getElementById("edisplay");
-    edisplay.innerHTML="Please enter Email";
-    edisplay.style.color="red";
-    return false;
-    
-    }
-    else
-    {
-    var edisplay=document.getElementById("edisplay");
-    edisplay.innerHTML="";
-    
-    }
         if(pass.value==="")
     {
     var pdisplay=document.getElementById("pdisplay");
@@ -152,7 +163,7 @@
     
         }
     }
-    return false;
+    return true;
     }
     </script>
     

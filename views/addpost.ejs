@@ -75,12 +75,14 @@
                             <textarea name="address" rows="5" cols="32"></textarea>    
                             </td>
                         </tr>
+                        <% if(mycheck !=1 ) { %>
                         <tr>
                                 <td>Email ID</td>
                                 <td>
                                 <input type="text" name="email" />    
                                 </td>
                             </tr>
+                            <% } %>
                         <tr>
                             <td>Phone no.</td>
                             <td>
@@ -114,18 +116,7 @@
 
                 </div>
 		</div>
-		<div id="sidebar">
-			<div class="box">
-				<h3>Social Links</h3>
-				<ul class="list">
-					<li class="first"><a href="#">Facebook</a></li>
-					<li><a href="#">Gmail</a></li>
-					<li><a href="#">Twitter</a></li>
-					<li><a href="#">LinkedIn</a></li>
-				</ul>
-			</div>
-			
-		</div>
+        <% include sidebar %>
 		<br class="clearfix" />
 	</div>
     

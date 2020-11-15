@@ -1,9 +1,11 @@
 <% include header %>    
-<% if (mycheck==1) { %>
-    <% include usernav %>
+<% if (role=='user') { %>
+	<% include usernav %>
+	<% } else if (role=='admin'){ %>
+		<% include adminnav %>
     <% } else { %>
 <% include nav %>
-<% } %>     
+<% } %>       
 <% include slider %>        
     
 	<div id="page">
@@ -11,7 +13,6 @@
 			<div class="box">
 				<h2>View Sub-Categories</h2>
 				<h2><%= unm %></h2> 
-				
 				<style>
 				#mycat
 				{

@@ -3,6 +3,7 @@ var path=require('path')
 var usersmodel = require('../models/usersmodel');
 var router = express.Router();
 
+
 router.use(function(req,res,next){
   if(req.session.unm==undefined || req.session.role!='admin')
   {
@@ -14,7 +15,10 @@ router.use(function(req,res,next){
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('adminhome',{'unm':req.session.unm,'role':req.session.role});  
+  usersmodel.fetchdata('addcat',function(result){
+    res.render('index',{'mycat':result,"mycheck":1,'unm':req.session.unm,'role':req.session.role});
+  })
+  //res.render('adminhome',{'unm':req.session.unm,'role':req.session.role});  
 });
 
 

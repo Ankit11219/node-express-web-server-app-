@@ -1,5 +1,5 @@
 <% include header %>    
-<% include adminnav %>    
+<% include nav %>    
 <% include slider %>        
     
 	<div id="page">
@@ -8,9 +8,9 @@
 					<h2 style="color:orangered"><%= result %></h2>
 					<br/>
 					
-				<h2>Change Password</h2>
+				<h2>Forget Password</h2>
 							   
-				<form method="POST" action="/login">
+				<form method="POST" action="/forgetpass">
                     <table  cellspacing='10'>
                         <tr>
                             <td>Username(Email ID)</td>
@@ -19,16 +19,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Password</td>
-                            <td>
-                            <input type="password" name="pass" />    
-                            </td>
-                        </tr>
-                        <tr>
                             <td colspan="2">
-                               <input type="submit" name="s" value="Login" />     
+                               <input type="submit" name="s" value="submit" style="margin: 5% 25%;padding: 8px 25px;background-color: rgb(66,139,202);border-radius: 10%"/>     
                             </td>
                         </tr>
+                       
                     </table>        
                 </form>
 

@@ -1,9 +1,11 @@
 <% include header %>    
-<% if (mycheck==1) { %>
-    <% include usernav %>
+<% if (role=='user') { %>
+	<% include usernav %>
+	<% } else if (role=='admin'){ %>
+		<% include adminnav %>
     <% } else { %>
 <% include nav %>
-<% } %>     
+<% } %>       
 <% include slider %>        
     
 	<div id="page">
@@ -14,13 +16,13 @@
 				<style>
 				.mycat
 				{
-					height: 180px;
+					height: 200px;
 					width:95%;
 					margin: auto;
 				}
 				.mycat1{
-					width:220px;
-					height:170px;
+					width:25%;
+					height:190px;
 					float: left;
 					margin: 5px;
 				}
@@ -32,6 +34,9 @@
 					float: left;
 					margin: 5px;
 				}
+				h4{
+					font-size: 20px;
+				}
 
 				</style>
 				
@@ -39,18 +44,24 @@
 				<div class="mycat" style="border:2px solid rgba(0, 0, 0, 0.2);">
 					
 					<div class="mycat2">
-						<img src="../uploads/<%= mypost[i].my_img1 %>" height="170" width="150"/>
+						<img src="../uploads/<%= mypost[i].my_img1 %>" height="185" width="180"/>
 					</div>
 					<div class="mycat2">
-						<h4><a href="/showpost/<%= mypost[i].cat_nm %>"><%= mypost[i].title %></a></h4>
+						<h4><%= mypost[i].title %></h4>
 						<p><%= mypost[i].cat_nm %> >> <%= mypost[i].Pro_name %></p>
 						<h5><%= mypost[i].city %>, <%= mypost[i].state %></h5>
+						<h5>Contact No-<%= mypost[i].mob %></h5>
 					</div>
 					<div class="mycat1">
-							<p><b>Description:-</b><%= mypost[i].description %></p>
+							<p><b>Description:- </b><%= mypost[i].description %></p>
 						</div>
 					<div class="mycat2">
 						<h4 style="text-align: right;margin-top: 10px;">₹ <%= mypost[i].price %></h4>
+						<% if (role=='user') { %>
+							<a style="float: right;margin-top: 10px;" href="https://enigmatic-gorge-26752.herokuapp.com/chat.html?name=<%= nm %>&room=<%= mypost[i].email %>" target="_blank"><Button >Chat with Seller</Button></a>
+							<% } else {%>
+								<button style="float: right;margin-top: 10px;" onclick="logincontact()">Chat with Seller</button>  
+								<% } %>
 						</div>
 				</div>
 				<br>
@@ -60,7 +71,13 @@
 	</div>
     
     
-<% include footer %>        
+<% include footer %>      
+
+<script >
+	function logincontact() {
+		alert("You have to login first");
+	}
+</script>
     
     
     

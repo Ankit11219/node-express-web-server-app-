@@ -1,6 +1,8 @@
 <% include header %>   
-<% if (mycheck==1) { %>
-    <% include usernav %>
+<% if (mycheck==1 && role=='user') { %>
+	<% include usernav %>
+	<% } else if (mycheck==1 && role=='admin'){ %>
+		<% include adminnav %>
     <% } else { %>
 <% include nav %>
 <% } %>   
@@ -9,7 +11,7 @@
 	<div id="page">
 		<div id="content">
 			<div class="box">
-				<h2>Welcome to PostKrde.com</h2>
+				<h2>Welcome to Usell.com</h2>
 				<h2><%= unm %></h2>       
 
 				
@@ -32,7 +34,7 @@
 					<% for(i=0;i<mycat.length;i++) { %>
 					<a href="/viewsubcat/<%= mycat[i].cat_nm %>">	
 					<div id="mycat1">
-						<center><img src="uploads/<%= mycat[i].cat_img %>" height="100" width="150"/>
+						<center><img src="../uploads/<%= mycat[i].cat_img %>" height="100" width="150"/>
 						<br>
 						<b><%= mycat[i].cat_nm %></b>
 						</center>

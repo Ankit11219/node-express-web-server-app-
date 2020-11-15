@@ -119,6 +119,14 @@ function manage(tbl_nm,cb){
         cb(result);
     });
 }
+function manageuserpost(tbl_nm,regid,cb){
+    db.collection(tbl_nm).find({"regid":regid}).toArray(function(err,result){
+        if(err)
+            console.log(err);
+        else
+        cb(result);
+    });
+}
 function manageProfile(tbl_name,data,cb){
     db.collection(tbl_name).find({"unm":data}).toArray(function(err,result){
         if(err)
@@ -156,4 +164,4 @@ function blockUser(tbl_name,data,cb){
 },0.700);
 }
 
-module.exports={updateProfile:updateProfile,manageProfile:manageProfile,blockUser:blockUser,deletePost:deletePost,postdata:postdata,checkRegistration:checkRegistration,manage:manage,countRegister:countRegister,fetchsubdata:fetchsubdata,fetchalldata:fetchalldata,fetchdata:fetchdata,addsubcategory:addsubcategory,addcategory:addcategory,authenticationupdate:authenticationupdate,logincheck:logincheck,userregistration:userregistration}
+module.exports={manageuserpost:manageuserpost,updateProfile:updateProfile,manageProfile:manageProfile,blockUser:blockUser,deletePost:deletePost,postdata:postdata,checkRegistration:checkRegistration,manage:manage,countRegister:countRegister,fetchsubdata:fetchsubdata,fetchalldata:fetchalldata,fetchdata:fetchdata,addsubcategory:addsubcategory,addcategory:addcategory,authenticationupdate:authenticationupdate,logincheck:logincheck,userregistration:userregistration}
